@@ -1,0 +1,283 @@
+%% LyX 2.2.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage{fontspec}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% 重定义\nobreakspace命令，避免XeTeX出错（2.1.2版本后已不需要）
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+
+% 解决pdflatex不支持插入eps图片问题
+\usepackage{epstopdf}
+
+\makeatother
+
+\usepackage{xunicode}
+\begin{document}
+1.用数据位数(n)小的存储器构成数据位数(N)多的存储器时每个片选信号要一次选中$\frac{N}{n}$个存储器(且每次选中的每个小存储器所占的数据线都不相同)，其中片选信号线有m条，$\frac{N}{n}\cdot m$为总的小存储器个数，若小存储器数据位数为k位，则构成存储容量为$\frac{N}{n}\cdot m\cdot k$位且数据位数为$\frac{N}{n}\cdot k$的大存储器。
+
+2.小存储器个数为m，大存储器容量为$N\ Byte\times k_{1}$位，小存储器容量为$M\ Byte\times k_{2}$位，则有$m=\frac{N\cdot k_{1}}{M\cdot k_{2}}$。
+
+3.地址线最低位分奇偶，最高位分相邻。
+
+4.Cache-主存效率：$e=\frac{\text{访问Cache的时间}}{\text{平均时间}}$
+
+5.动态RAM的刷新要先读后写，因此需要2倍存取周期的时间。
+
+6.海明码纠错关系：相邻校验码序号相差2倍，共同逻辑项序号为校验码序号之和。计算完成后按图示高低位可读出错位序号。
+\begin{align*}
+\text{低位} & A_{1}=1\oplus3\ \ \ \ \ \oplus5\oplus7\\
+\uparrow & A_{2}=2\oplus3\oplus6\ \ \ \ \ \oplus7\\
+\text{高位} & A_{3}=4\ \ \ \ \ \oplus6\oplus5\oplus7
+\end{align*}
+
+7.算地址码(线)总位(个)数及片选地址线个数时应考虑字长。
+
+8.题目中给出磁头个数n时，数据传输率为$Nrn$，其中N为每道容量，r为转速。
+
+9.存储芯片的片选线要用上所有剩下的地址线，不然可能出现高位地址冲突的问题。
+
+10.%
+\begin{tabular}{|c|c|c|}
+\hline 
+磁记录方式 & 特点 & 其它\tabularnewline
+\hline 
+\hline 
+RZ(归0制) & 1正0负 & 归0\tabularnewline
+\hline 
+NRZ(不归0制) & 1正0负 & 不归0\tabularnewline
+\hline 
+PM(调相) & 1降0升 & \tabularnewline
+\hline 
+FM(调频) & 1变0不变(中间位置) & 相邻处改变\tabularnewline
+\hline 
+\end{tabular}
+
+11.动态RAM不用对列刷新。
+
+12.MHz的$M=10^{6}\neq2^{20}$
+
+13.ASCII码为7位。
+
+14.一个字节256色($2^{8}=256\rightarrow8bit\rightarrow1B$)
+
+15.一个$7\times9(5\times7)$点阵对应一个ASCII码，即1B。
+
+16.浮点数的二进制表示：$0.1101\times2^{10}(2^{2}\text{十进制})=0.0110\times2^{11}(2^{3})$，$1.0110\times2^{10}=1.10110(\text{补码负数右移添1)}\times2^{11}$，等号右边的浮点数因符号位与小数第一位相同，均不是规格化数。
+
+17.原补码除法第一次加减不上商，补码末位商恒置1(比原码少了一次加法)。补码比较(Booth，一位乘)法为乘法，补码加减交替(一位除)法为除法。原码乘补码除奇数不用加1，两位运算要向上取整。设n为乘(被除)数位数(不算符号位)
+
+\begin{tabular}{|c|c|c|c|}
+\hline 
+运算方法 & n的奇偶性 & 移位次数 & 加法次数\tabularnewline
+\hline 
+\hline 
+原码一位乘 &  & n & n\tabularnewline
+\hline 
+原码两位乘 & 偶 & $\lceil\frac{n}{2}\rceil$ & $\lceil\frac{n}{2}\rceil+1$\tabularnewline
+\hline 
+ & 奇 & $\lceil\frac{n}{2}\rceil$ & $\lceil\frac{n}{2}\rceil$\tabularnewline
+\hline 
+补码一位乘(补码比较法，Booth算法) &  & n & n+1\tabularnewline
+\hline 
+补码两位乘 & 偶 & $\lceil\frac{n}{2}\rceil$ & $\lceil\frac{n}{2}\rceil+1$\tabularnewline
+\hline 
+ & 奇 & $\lceil\frac{n}{2}\rceil$ & $\lceil\frac{n}{2}\rceil$\tabularnewline
+\hline 
+原码加减交替除法 &  & n & n+1\tabularnewline
+\hline 
+补码加减交替除法 &  & n & n(n+1次上商)\tabularnewline
+\hline 
+\end{tabular}
+
+原码两位乘被乘数(左)添三位符号位，乘数添两位0，且按补码右移。
+
+补码一位乘校正法当乘数为负时取乘数补码数值位作为乘数，运算结果加上被乘数的补码相反数。
+
+补码一位乘(Booth算法)当移到原乘数符号位进入最后一位，第一数值位进入附加位为止。
+
+补码加减交替法：符号相同上1，不同上0，上1加正，上0加负，加法加的数与上上一个数(未移位的余数)相反。
+
+18.n位二进制补码浮点数表示最大最小正负数，做题思路：
+
+A.写出补码阶码和尾数的正负数的表示范围。
+
+a.写出最大最小处二进制码，如规格化补码：正数形式 0.1xxx: 0.1000$\rightarrow$0.1111，负数形式
+1.0xxx: 1.0000$\rightarrow$1.0111 
+
+b.根据二进制码写出表示范围。
+
+B.根据阶码和尾数的范围组合出最终范围。
+\begin{verse}
+19.移码和补码一一对应，符号位相反。如果移码符号位为1，则为正数，不用将数值位取补。
+
+20.对阶尾数右移时丢掉多余的数码(或使用0舍1入法)。
+
+21.溢出只需右规一次，右规阶码加1，左规阶码减1。01.xx和10.xx溢出，要右规。
+
+22.不能从十进制基制的阶码不为0的浮点数尾数获得十进制值，因十进制基制与二进制不同。
+
+23.t:传送条件(transfer) d:本地进位(domestic) $d_{i}=A_{i}B_{i}$(只要有一个0，就无本地进位)，$t_{i}=A_{i}+B_{i}$(只要有一个为1，就有传送进位)。$C_{i}=d_{i}+t_{i}C_{i-1}$
+
+24.PC/存储器有按字节寻址和按字寻址两种方式。
+
+25.存储器先存低位后存高位，以字为单元存，如12345678H存为78 56 34 12每字各位从左到右由低到高0 1 2 3(1
+2 4 8)。
+
+26.RS型指令：寄存器-存储器型指令。
+
+27.指令寻址分为：a.顺序寻址 b.跳跃寻址 数据寻址分为：a.立即寻址 b.直接寻址 c.间接寻址 d....
+
+28.指令格式分为：一地址，二地址，三地址。一地址指令两次访存：a.取指 b.取数。
+
+29.机器字长=寄存器(CPU)位数。
+
+30.立即数的有效地址为指令地址码所在存储单元地址。
+
+31.多地址多寄存器指令应考虑添加多个寻址特征字段M。
+
+32.5级流水一个指令要用5个时钟周期，10个指令要用5+(10-1)=14个周期，不流水要用5×10个周期。
+
+33.中断屏蔽字中从左到右为1 2 3 4，若为0则1未被屏蔽，为1则被屏蔽，从下向上写，自己和低级中断应被屏蔽。
+
+34.有MAR就有$1\rightarrow R\text{或}1\rightarrow W$。
+
+35.机器指令=微程序(微程序控制方式)
+
+36.微操作命令信号=微命令$\rightarrow$一个微操作$\rightarrow$操作控制字段一位
+
+37.提高整机速度方案：
+
+A.控制器：a.流水线技术 b.RISC指令系统 
+
+B.运算器：a.阵列乘/除法器 b.先行进位逻辑 
+
+C.存储器(I/O)：a.Cache b.多体交叉存储器 c.DMA方式 d.通道传送方式
+
+38.中断向量地址形成部件将链式排队器输出的排队选中信息编码成向量地址，向量地址中存放跳转到中断服务程序入口地址的指令，或直接存放中断向量地址表(入口地址)。
+
+39.画74LS138时要留出与存储器之间的空间，以免存储器地址线没画够时没有地方画线。
+
+40.DMA，程序中断比较：(传香一包油饼块)
+
+\begin{tabular}{|c|c|c|}
+\hline 
+比较项 & 程序中断方式 & DMA方式\tabularnewline
+\hline 
+\hline 
+传输数据 & 程序 & 硬件\tabularnewline
+\hline 
+响应时间 & 指令周期结束 & 存取周期结束\tabularnewline
+\hline 
+异常处理 & 可以 & 不能\tabularnewline
+\hline 
+保护现场 & 需要 & 不需要\tabularnewline
+\hline 
+优先级 & 低 & 高\tabularnewline
+\hline 
+与主程序是否并行 & 串行 & 并行\tabularnewline
+\hline 
+单位 & 字 & 块\tabularnewline
+\hline 
+\end{tabular}
+
+41.存取周期：存取一个字符所花时间。当有DMA请求时，存取周期结束后CPU响应中断，并把总线使用权交给DMA。
+
+42.DMA方式分批传送n个字符，最后一个字符存取周期结束后中断CPU，程序中断方式每传一个字符中断一次。
+
+43.DMA响应过程：
+
+A.预处理：DMA控制逻辑$\rightarrow$设备地址寄存器(DAR)$\rightarrow$主存地址寄存器(AR) 
+
+B.数据传送：数据缓冲寄存器(BR)$\rightarrow$总线控制权$\rightarrow$读/写$\rightarrow$中断机构 
+
+C.后处理：执行中断服务程序
+
+44.微程序控制单元：IR$\rightarrow$微$\rightarrow$顺$\rightarrow$A$\rightarrow$译$\rightarrow$存$\rightarrow$D($\rightarrow$顺)$\rightarrow$控制信号
+
+45.微指令的控制方式=微指令的编码方式：a.直接编码 b.字段直接编码 c.字段间接编码 d.混合编码
+
+46.在微程序控制器中，后继微指令地址的形成方式有：
+
+直(直接由微指令下地址字段指出)
+
+操(机器指令的操作码形成)
+
+计(增量计数器法)
+
+分(分支转移)
+
+测(通过测试网络形成)
+
+硬(由硬件产生)
+
+47.存储器CPU连线大题：a.确定选用的芯片。b.确定每个芯片地址范围。c.确定片选线与芯片多对多映射关系。n根片选线与m个芯片有$n\cdot2^{m}$种连接方式。要用完题目中的条件。%
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+片选信号端 & $A_{16}$ & $A_{0}$ & BHE & \tabularnewline
+\hline 
+\hline 
+$Y_{6}$ & 1 & 1 & 0 & ROM1\tabularnewline
+\hline 
+$Y_{5}$ & 1 & 0 & 1 & ROM2\tabularnewline
+\hline 
+$Y_{4}$ & 1 & 0 & 0 & ROM1\&ROM2\tabularnewline
+\hline 
+$Y_{2}$ & 0 & 1 & 0 & RAM1\tabularnewline
+\hline 
+$Y_{1}$ & 0 & 0 & 1 & RAM2\tabularnewline
+\hline 
+$Y_{0}$ & 0 & 0 & 0 & RAM1\&RAM2\tabularnewline
+\hline 
+\end{tabular}$\rightarrow$%
+\begin{tabular}{|c|c|c|c|}
+\hline 
+RAM1 & RAM2 & ROM1 & ROM2\tabularnewline
+\hline 
+\hline 
+0 & 0 & 1 & 0\tabularnewline
+\hline 
+0 & 0 & 0 & 1\tabularnewline
+\hline 
+0 & 0 & 1 & 1\tabularnewline
+\hline 
+1 & 0 & 0 & 0\tabularnewline
+\hline 
+0 & 1 & 0 & 0\tabularnewline
+\hline 
+1 & 1 & 0 & 0\tabularnewline
+\hline 
+\end{tabular}
+
+$\rightarrow$CS(ROM1)=$Y_{6}+Y_{4}$，CS(ROM2)=$Y_{5}+Y_{4}$，CS(RAM1)=$Y_{2}+Y_{0}$，CS(RAM2)=$Y_{1}+Y_{0}$
+
+形成片选信号时，$Y_{x},Y_{y}$间只能是或关系。
+
+48.“主存(Cache)容量为512KB”$\Rightarrow$主存(Cache)按字节编址。 “主存(Cache)容量为512k×16位”$\Rightarrow$主存(Cache)可能按字编址，看条件。
+
+49.一次中断的过程：请，判，响，服，回
+
+50.微程序设计方法，取指周期：
+
+$\begin{array}{cc}
+T_{0} & PC\rightarrow MAR,1\rightarrow R\\
+T_{1} & Ad(CMDR)\rightarrow CMAR\\
+T_{2} & M(MAR)\rightarrow MDR,(PC)+1\rightarrow PC\\
+T_{3} & Ad(CMDR)\rightarrow CMAR\\
+T_{4} & MDR\rightarrow IR\\
+T_{5} & OP(IR)\rightarrow\text{微地址形成部件}\rightarrow CMAR
+\end{array}$
+\end{verse}
+
+\end{document}
