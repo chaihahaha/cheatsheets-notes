@@ -23,6 +23,7 @@
 \usepackage{listings}
 \usepackage{tikz}
 \usepackage{tikz-qtree}
+\usepackage[left=2cm, right=2cm, top=2cm]{geometry}
 \usetikzlibrary{calc,shapes.multipart,chains,arrows,positioning}
 \tikzset{
     squarecross/.style={
@@ -106,13 +107,20 @@ void PostOrderPrint(BinaryTree t) {
 	Stack s[MAX_SIZE]; int top = 0;
 	BinaryTree p = t;
 	while( p || top > 0) {
-		if(p) { s[++top].data = p; s[top].tag = 0; p = p->left; }
+		if(p) { 
+			s[++top].data = p; 
+			s[top].tag = 0; 
+			p = p->left; 
+		}
 		else {
 			p = s[top].data;
 			if(p->right && s[top].tag!=1) { 
-				s[top].tag = 1; p = p->right; 
+				s[top].tag = 1; 
+				p = p->right; 
 			}
-			else { cout<<s[top--].data->data; p = NULL; }
+			else { 
+				cout<<s[top--].data->data; 
+				p = NULL; }
 		}
 	}
 }
@@ -195,8 +203,15 @@ void InOrderPrint(BinaryTree t) {
 	BinaryTree stack[MAX_SIZE]; int top = 0;
 	BinaryTree p = t;
 	while(p || top>0) {
-		if(p) { stack[++top] = p; p = p->left; }
-		else { p = stack[top--]; cout<<p->data; p = p->right; }
+		if(p) { 
+			stack[++top] = p; 
+			p = p->left; 
+		}
+		else { 
+			p = stack[top--]; 
+			cout<<p->data; 
+			p = p->right; 
+		}
 	}
 }
 \end{lstlisting}
@@ -337,7 +352,8 @@ void DFS(ALGraph &g,int vi){
 	ArcNode *stack[g.arcnum];     
 	int top=0;     
 	bool visited[g.vexnum];     
-	for(int i=0; i < g.vexnum; i++) visited[i]=false;     
+	for(int i=0; i < g.vexnum; i++) 
+		visited[i]=false;     
 	ArcNode *p=g.vertices[vi]->firstarc;     
 	cout<<vi<<"  ";     
 	visited[vi]=true;         
