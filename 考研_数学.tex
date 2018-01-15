@@ -1,0 +1,105 @@
+%% LyX 2.2.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% 重定义\nobreakspace命令，避免XeTeX出错（2.1.2版本后已不需要）
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+
+% 解决pdflatex不支持插入eps图片问题
+\usepackage{epstopdf}
+\usepackage[left=2cm, right=2cm, top=2cm]{geometry}
+
+\makeatother
+
+\usepackage{xunicode}
+\begin{document}
+1.当题目中有关于积分的不等式时，可以考虑构造一个原函数$F(x)$使$F^{\prime}(x)$有不等式的形式，如$F(x)=x\int_{x}^{1}f(y)dy$或直接求它的导函数$f^{\prime}(x)$；使用积分中值定理{[}与积分面积相等的矩形必与曲线相交于一点$(\xi,f(\xi))${]}
+
+2.当题目中有等式或函数某点值时，可考虑拉格朗日中值定理和罗尔定理.(拉格朗日中值定理与一阶泰勒公式等价.)
+
+3.题目中有定积分时可考虑将常数项凑成定积分.
+
+4.注意定义域.
+
+5.$(\ln(x+\sqrt{x^{2}\pm1}))^{\prime}=\frac{1}{\sqrt{x^{2}\pm1}}$，$(\arcsin x)^{\prime}=\frac{1}{\sqrt{1-x^{2}}}$，$(\frac{1}{2}x\sqrt{x^{2}\pm1}\pm\frac{1}{2}\ln|x+\sqrt{x^{2}\pm1}|)^{\prime}=\sqrt{x^{2}\pm1}$，$(\frac{1}{2}x\sqrt{1-x^{2}}+\frac{1}{2}\arcsin x)^{\prime}=\sqrt{1-x^{2}}$(可用dx中的x分部积分得出)
+
+6.分部积分时设积分结果为$I$，要尽量凑出$I$以构成关于$I$的方程，如$I=\int_{0}^{\frac{m\pi}{2}}\sin^{n}xdx$要尽量使右侧出现$\sin x$.
+
+7.能用三角解决的不要用无理式，有$\sin^{2}x$，$\cos^{2}x$可凑$\tan^{2}x$，有$\frac{1}{\cos^{2}x}dx$可凑$d(\tan x)$，有$\sqrt{1-x^{2}}$可换$\sin t$，想办法凑$\tan t$.
+
+8.$\int\frac{du}{(\frac{u}{2})^{2}+1}\neq\arctan\frac{u}{2}$不要忘记积分变量与变量一致性.
+
+9.积分结果一定要求导验证.
+
+10.能拆出常数项或多项式项的要先拆后积分，如$\int\frac{du}{(2u-1)(u^{2}+1)}=\int\frac{u^{2}+1-u^{2}}{(2u-1)(u^{2}+1)}du$从高阶开始配凑，也可使用待定参数，令$\frac{1}{(2u-1)(u^{2}+1)}=A\frac{1}{2u-1}+B\frac{u}{u^{2}+1}+C\frac{1}{u^{2}+1}$解得$A=\frac{4}{5},B=-\frac{2}{5},C=-\frac{1}{5}$.归纳：分母要化为$(A_{1}x+B_{1})^{n}(A_{2}x^{2}+B_{2})(A_{3}x^{2}+B_{3}x+C_{3})$时，若后两式不能因式分解则最简分量必有$\frac{1}{(A_{1}x+B_{1})^{n}},\frac{x}{A_{2}x^{2}+B_{2}},$$\frac{1}{A_{2}x^{2}+B_{2}},$
+
+$\frac{x}{A_{3}x^{2}+B_{3}x+C_{3}},\frac{1}{A_{3}x^{2}+B_{3}x+C_{3}}$.
+
+11.柯西不等式$[\int_{a}^{b}f(x)g(x)dx]^{2}\leq\int_{a}^{b}[f(x)]^{2}dx\cdot\int_{a}^{b}[g(x)]^{2}dx$.
+
+12.直线$l$$\frac{x-x_{0}}{a}=\frac{y-y_{0}}{b}=\frac{z-z_{0}}{c}$方向向量为$\vec{l}=(a,b,c)$，经过点$L(x_{0},y_{0},z_{0})$，点$M$到$l$的距离为$d=\frac{|\vec{l}\times\vec{L}|}{|\vec{l}|}$.
+
+13.一条直线与另外两条直线相交，它们的方向向量没有直接关系，也不能联立两直线求交点，认为它在第三条直线上，因为交点可能有两个.
+
+14.若$f(x,y)$在$(x,y)$点可微，则$f(x+\Delta x,y+\Delta y)-f(x,y)=f'_{x}(x,y)\Delta x+f'_{y}(x,y)\Delta y=O(\sqrt{(\Delta x)^{2}+(\Delta y)^{2}})$.
+
+15.$\frac{d}{dy}f(0,y)|_{y=0}=\lim\limits_{\Delta y\to0}\frac{f(0,\Delta y)-f(0,0)}{\Delta y}=\lim\limits_{\Delta y\to0}[\frac{f(x,\Delta y)-f(x,0)}{\Delta y}]_{x=0}=\frac{\partial}{\partial y}f(x,y)|_{(0,0)}$，因此可在求偏导前对无关变量赋值.
+
+16.设$\vec{l}$与$x,y,z$轴夹角分别为$\alpha,\beta,\gamma$，则函数$u(x,y,z)$沿$\vec{l}$方向的方向导数为$\frac{\partial u}{\partial\vec{l}}=\frac{\partial u}{\partial x}\cos\alpha+\frac{\partial u}{\partial y}\cos\beta+\frac{\partial u}{\partial z}\cos\gamma$.
+
+17.$[f(u(x,y),v(x,y))]_{x}^{\prime}=f_{1}^{\prime}u_{x}^{\prime}+f_{2}^{\prime}v_{x}^{\prime}.$
+
+18.$u(x,y,z)$在$\nabla u$方向上的方向导数最大，值为$|\nabla u|$.
+
+19.$f_{x}^{\prime}(x,y,z)$ $(z=z(x,y))$ $\neq$ $\frac{\partial}{\partial x}[f(x,y,z(x,y))]$.
+
+20.$\varphi_{x}^{\prime}(2x^{2})=\varphi^{\prime}(2x^{2})\cdot4x$.
+
+21.当$f_{12}^{\prime\prime}=f_{21}^{\prime\prime}$时,最后结果应合并.
+
+22.隐函数求导之前应将所有$z=z(x,y)$标记出来以免遗忘.
+
+23.多项式要统一格式，如$x-y,y-x$应统一为$x-y,-(x-y)$.
+
+24.求导要一步一步地求，不要跳步.
+
+25.对$f(x,y)=0$可用全微分为0得到$\frac{dy}{dx}=-\frac{f_{x}^{\prime}}{f_{y}^{\prime}}$.
+
+26.$\frac{\partial(x,y)}{\partial(u,v)}=\begin{vmatrix}\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v}\\
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
+\end{vmatrix}=\begin{vmatrix}\begin{bmatrix}\frac{\partial x}{}\\
+\frac{\partial y}{}
+\end{bmatrix}\begin{bmatrix}\frac{}{\partial u} & \frac{}{\partial v}\end{bmatrix}\end{vmatrix}$.
+
+27.曲线$(x(t),y(t),z(t))$在$(x,y,z)$点切线方向向量为$(x^{\prime},y^{\prime},z^{\prime})$.
+
+28.曲面$f(x,y,z)=0$在$(x,y,z)$点法线方向向量为$(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial f}{\partial z})$.
+
+29.$\vec{a}=(x_{1},y_{1},z_{1})$，$\vec{b}=(x_{2},y_{2},z_{2})$方向相同$\Rightarrow$$\frac{x_{1}}{x_{2}}=\frac{y_{1}}{y_{2}}=\frac{z_{1}}{z_{2}}$$\nRightarrow$$\begin{cases}
+x_{1}=x_{2}\\
+y_{1}=y_{2}\\
+z_{1}=z_{2}
+\end{cases}$.
+
+30.求函数在曲面上的最值(条件最值)，因最值点一定在曲面上，可将曲面作为乘子引入，令$F=(\ln)f(x,y,z)+\lambda\cdot g(x,y,z)$(拉格朗日乘子法).
+
+31.海伦公式：$S=\sqrt{\frac{L}{2}(\frac{L}{2}-a)(\frac{L}{2}-b)(\frac{L}{2}-c)}$.
+
+32.$z(x,y)$在$(x_{0},y_{0})$处满足$\frac{\partial z}{\partial x}=\frac{\partial z}{\partial y}=0$，$A=\frac{\partial^{2}z}{\partial x^{2}},B=\frac{\partial^{2}z}{\partial x\partial y},C=\frac{\partial^{2}z}{\partial y^{2}}$，若：1.$B^{2}-AC<0$,
+$1^{\circ}$.$A>0$，取极小值，$2^{\circ}$.$A<0$，取极大值；2.$B^{2}-AC>0$，非极值点.
+
+33.对$f(x,y)$若$\frac{\partial^{2}f}{\partial x\partial y}=0$，则$\frac{\partial f}{\partial y}=\int0dx=\varphi(y)$，$f=\int\varphi(y)dy=\psi(y)+C(x)$，对变量$x$积分会出现$\varphi(y)$.
+
+34.不要把法向量与$(\frac{\partial F}{\partial x},\frac{\partial F}{\partial y},\frac{\partial F}{\partial z})$划等号，它们是共线关系.
+
+35.多重积分时，$x$的上下限为区域画横线，$y$的上下限为区域画竖线.
+\end{document}
