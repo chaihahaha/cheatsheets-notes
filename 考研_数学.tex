@@ -102,4 +102,149 @@ $1^{\circ}$.$A>0$，取极小值，$2^{\circ}$.$A<0$，取极大值；2.$B^{2}-A
 34.不要把法向量与$(\frac{\partial F}{\partial x},\frac{\partial F}{\partial y},\frac{\partial F}{\partial z})$划等号，它们是共线关系.
 
 35.多重积分时，$x$的上下限为区域画横线，$y$的上下限为区域画竖线.
+
+36. 曲面面积$S=\iint\sqrt{1+(z_x^{\prime})^2+(z_y^{\prime})^2}\mathrm{d}x\mathrm{d}y$
+
+37. $(x^2)^{\frac{3}{2}}\neq x^3$
+
+38. 函数奇偶性，周期性结合积分上下限可极大简化运算
+
+39. 多重积分$ \int \mathrm{d}x \int \mathrm{d}y \int f \mathrm{d}z$中y的上下限由对z积分后降维图形区域范围确定
+
+40. 转动惯量$ I=\iiint r^2\rho\mathrm{d}V$
+
+41. 开根号一定要加绝对值
+
+42. 不要轻易破坏对称性用于化简，如$ \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\sin\theta\cos^3\theta\mathrm{d}\theta$因$\sin\theta\cos^3\theta$为奇，得积分为0
+
+43. $\int_C P\mathrm{d}x+Q\mathrm{d}y$与路径无关$\Leftrightarrow\oint_CP\mathrm{d}x+Q\mathrm{d}y =0\Leftrightarrow P\mathrm{d}x+Q\mathrm{d}y=\mathrm{d}u\Leftrightarrow\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}$，设$\vec{F}=(P(x,y,z),Q(x,y,z),R(x,y,z)),\\ \mathrm{d}\vec{l}=(\mathrm{d}x,\mathrm{d}y,\mathrm{d}z),\\ \oint_L\vec{F}\mathrm{d}\vec{l}=\oint_LP\mathrm{d}x+Q\mathrm{d}y +R\mathrm{d}z =\iint_\Sigma\nabla \times\vec{F}\cdot\mathrm{d}\vec{\sigma}$对于可分离出保守场的积分要进行分离以简化运算
+
+44. 设平面$\Sigma(x,y,z)$法向量为$\vec{p}=(A,B,C)$面积为S，则它在$\vec{n}=(\alpha,\beta,\gamma)$方向降维后面积为$S^{\prime}=S\frac{\vec{n}\cdot\vec{p}}{|\vec{n}|\cdot|\vec{p}|}$，其中$\vec{p}$的方向与围成$\Sigma$的封闭曲线有关，从z轴正向看即从z的正无穷处向下看，逆时针则$\vec{p}$向上
+
+45. 求体积分和平面积分时，不要用边界条件化简被积函数
+
+46. 无穷级数若可展开为$\frac{1}{n}+\frac{1}{n^2}+\cdots$则应展开后根据最低阶判断收敛性（比较判别法的极限形式）没有$\frac{1}{n}$可先凑出$\frac{1}{n}$；可积分时使用积分判别法；带有$p^n$时考虑$\lim\limits_{n\to\infty}\sqrt[n]{a_n}$判别（根值判别法）
+
+47. 使用洛必达后再用级数展开会引起系数错误，如$1-\frac{\sin x}{x}$
+
+48. 交错级数：
+    1. 求$\lim\limits_{n\to\infty}|a_n|$，不为0则不收敛，再看是否绝对收敛
+    2. 求$a_n$与$a_{n+1}$大小关系，若$a_n>a_{n+1}$，条件收敛
+
+49. $\sum\limits_{n=1}^{+\infty}\frac{1}{n}=\ln n+c+r_n$，c为欧拉常数，$r_n\to0,\sum\limits_{n=1}^{\infty}\frac{1}{n^2}=\frac{\pi^2}{6}$
+
+50. $\because \frac{\ln n}{n}>\frac{1}{n}, (n\geq3), \therefore\sum\limits_{n=1}^{+\infty}\frac{\ln n}{n}$发散
+
+51. 一阶线性微分方程$\frac{\mathrm{d}y}{\mathrm{d}x}+P(x)y=Q(x)$先解齐次方程通解$y=C_1e^{-\int P(x)\mathrm{d}x}$令$C_1=C_1(x)$将通解代入非齐次方程得$y=e^{-\int P\mathrm{d}x}[c+\int Q\mathrm{e}^{\int P\mathrm{d}x}\mathrm{d}x]$
+
+52. 复杂级数先求导或积分再求幂级数
+
+53. $b_n=\frac{2}{T}\int_0^Tf(x)\sin\frac{n\pi x}{T}\mathrm{d}x$ （延拓）， $b_n=\frac{2}{2T}\int_{-T}^Tf(x)\sin\frac{n\pi x}{T}\mathrm{d}x$ 
+
+54. 和差化积
+    $$
+    \sin\alpha+\sin\beta=2\sin\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2}\\
+    \cos\alpha+\cos\beta=2\cos\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2}
+    $$
+
+55. 解一阶非线性方程时，将x和y凑到一起再进行换元，如$(x+y)y^{\prime}+(x-y)=0$ ，令$u=\frac{y}{x},y^\prime=\frac{u-1}{u+1}$
+
+56. 定积分不要忘记减下限
+
+57. $P(y,x)\mathrm{d}x+Q(y,x)\mathrm{d}y=0$形式的方程：先看$\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$是否成立，成立则用线积分，或考虑积分因子；再看是否可化为$y^\prime+Py=Q$形式，可以就用公式；最后看是否可分离变量，换元
+
+58. 曲率$\kappa={|\frac{\mathrm{d}\alpha}{\mathrm{d}s}|}=\frac{\mathrm{d}(\arctan y^\prime)}{\sqrt{1+y^{\prime2}}\mathrm{d}x}=\frac{|y^{\prime \prime}|}{(1+y^{\prime2})^{\frac{3}{2}}}$ 
+
+59. 方程$y^{\prime \prime}+Py^\prime+qy=P_m(x)\mathrm{e}^{ax}$，特解为$y^*=x^kQ_m(x)\mathrm{e}^{ax}$,k为$\mathrm{e}^{ax}$根重数，m为阶数
+
+60. 方程$y^{\prime \prime}+Py^\prime+qy=P_m(x)\mathrm{e}^{ax}\sin bx$，特解为$y^*=x^k(R_m(x)\cos bx + S_m(x)\sin bx)\mathrm{e}^{ax}$，k与a无关，k为$a+ib$的根重数
+
+61. 解伯努利方程$y^\prime+P(x)y=q(x)y^n$应令$z=y^{1-n}$ ；解欧拉方程$x^2\frac{\mathrm{d}^2y}{\mathrm{d}x^2}+a_1x\frac{\mathrm{d}y}{\mathrm{d}x}+a_2y=f(x)$ ，令$x=\mathrm{e}^t$
+
+62. 逆序数：从左到右每个数右边小于它的个数之和
+
+63. $AX=B$有解$\Leftrightarrow \mathrm{rank}(A)=\mathrm{rank}(\bar{A})$ 其中$\bar{A}=[A|B]$为增广矩阵
+
+64. 左/右乘逆矩阵$\Leftrightarrow$增广行/列变换；行/列增广时，逆矩阵的原矩阵的放在左边/上边
+
+65. 行列式为0$\Leftrightarrow$齐次线性方程组有非0解
+
+66. 齐次线性方程组可写成列向量线性组合和行向量点乘形式
+
+67. 实对称阵，不同特征值对应的不同特征向量正交
+
+68. 实对称$\Rightarrow$相似于对角阵；n个不同特征值$\Rightarrow$ 相似对角；n个特征向量线性无关$\Leftrightarrow$ 相似对角
+
+69. $\sum\limits_{i=1}^n\lambda_i=\sum\limits_{i=1}^na_{ii}=tri(A),\prod\limits_{i=1}^n\lambda_i=|A|$  ，相似$\Rightarrow$同秩，同特征值，同行列式
+
+70. 设特征向量$\alpha_1,\alpha_2\cdots\alpha_n$对应特征值$\lambda_1,\lambda_2\cdots\lambda_n$ ，则$[\alpha_1\cdots\alpha_n]^{-1}A[\alpha_1\cdots\alpha_n]=\left[\begin{matrix}\lambda_1&\cdots&0\\0&\cdots&0\\\vdots&&\vdots\\0&\cdots&\lambda_n\end{matrix}\right]=\Lambda$
+
+71. 一个特征值至少有一个特征向量
+
+72. $A=\left[\begin{matrix}a&b\\c&d\end{matrix}\right],A^*=\left[\begin{matrix}d&-b\\-c&a\end{matrix}\right],A^{-1}=\frac{1}{ad-bc}\left[\begin{matrix}d&-b\\-c&a\end{matrix}\right]$
+
+73. 标准型可与相似对角阵无关，但满足惯性定律
+
+74. 随机事件常用技巧：加一个有的，$(A+B)+B=C+B$；乘一个有的，$(AB)B=CB$；拆成独立事件
+
+75. $C_0^0$不存在，当$P(B)=0$时，$P(A|B)$不存在
+
+76. $f(x)=\frac{1}{\sqrt{2\pi}\sigma}\mathrm{e}^{-\frac{(x-\mu)^2}{2\sigma^2}}$
+
+77. 切比雪夫大数定律：$P\left\{\text{偏差比}\epsilon\text{大}\right\}\leq\frac{\text{方差}}{\epsilon^2}$；依概率收敛$n\rightarrow+\infty$时，偏差小于任意小常数；切比雪夫大数定律：$n\rightarrow+\infty$时，总偏差的平均值小于任意小常数；伯努利大数定律：为二项分布时大数定律的特例；辛钦大数定律：二项分布且$E(x_i)=\mu$时大数定律的特例；棣莫弗-拉普拉斯中心极限定律：二项分布当n很大时，$\frac{\text{偏差}}{\text{标准差}}$服从正态分布；列维-林德伯格中心极限定理：$\sqrt{n}\frac{\text{总偏差的平均值}}{\text{标准差}}$服从正态分布
+
+78. $D(X-Y)=D(X)+D(Y)-2\mathrm{Cov}(x,y)$
+
+79. $\sigma$和$\sigma^2$ 注意区分，指数分布$P(x)=\lambda\mathrm{e}^{-\lambda x},E(X)=\frac{1}{\lambda},D(X)=\frac{1}{\lambda^2}$泊松分布$P(X=k)=\frac{\lambda^k}{k!}\mathrm{e}^{-\lambda},E(X)=D(X)=\lambda$
+
+80. $X+Y\sim N(2\mu,2\sigma^2),X-Y\sim N(0,2\sigma^2)$，X，Y满足独立，正态分布
+
+81. $\int_0^{+\infty}x^n\mathrm{e}^{-x}\mathrm{d}x=n!,\int_0^{+\infty}\frac{x^n}{n!}\mathrm{e}^{-x}\mathrm{d}x=1$
+
+82. 正态分布运算法则：$D(X_1+X_2+X_3)=3\sigma^2,D(X_1+2X_2)=\sigma^2+4\sigma^2$
+
+83. 正态总体的抽样分布中，$\bar{X}$与$S^2$相互独立($\mu=0,\sigma=1$)$n\bar{X}^2\sim\chi^2(1),(n-1)S^2\sim\chi^2(n),E(\chi^2(n))=n,D(\chi^2(n))=2n$
+
+84. 若$\alpha$为单位向量，即$\alpha^T\alpha=1$，则$\alpha(\alpha^T\cdot\alpha)=\alpha\cdot1=1\cdot\alpha$，即1为$\alpha\alpha^T$的唯一非零特征值
+
+85. 矩阵与对角阵相似时，对角阵中特征值顺序不影响。矩阵A特征值$\lambda_1\cdots\lambda_n$，则$A\sim\left[\begin{matrix}\lambda_1&\cdots&0\\0&\cdots&0\\\vdots&&\vdots\\0&\cdots&\lambda_n\end{matrix}\right]\Leftrightarrow$有n个线性无关特征向量$\Leftrightarrow\lambda_1=\cdots=\lambda_n(=\lambda)$时，$A-\lambda E$秩为n-r（r重根）
+
+86. 若$X\sim\chi^2(n)$，则2X不服从$\chi^2$分布，因此先化系数
+
+87. 绕y轴旋转的绕点会构成一个以y轴为圆心的圆，即$\sqrt{x^2+z^2}=r$，y坐标不变，因此$\frac{x^2}{a^2}-\frac{y^2}{b^2}=1\Rightarrow\frac{x^2+z^2}{a^2}-\frac{y^2}{b^2}=1$
+
+88. 非实对称阵无对应的正交对角化阵，即不存在$P^TP=E$，使$P^{-1}AP=\Lambda$（其中A为任一非对称阵）
+
+89. $\int_0^{+\infty}\frac{f(x)}{x^p}\mathrm{d}x=\lim\limits_{\epsilon\to0}\int_\epsilon^{1}\frac{f(x)}{x^p}\mathrm{d}x+\lim\limits_{N\to+\infty}\int_1^{N}\frac{f(x)}{x^p}\mathrm{d}x$可判断敛散性，利用极限由洛必达法则还可求出等价积分式；当p<1时，$\int_0^1\frac{1}{x^p}\mathrm{d}x$存在，当p>1时，$\int_1^{+\infty}\frac{1}{x^p}\mathrm{d}x$存在
+
+90. 前n-1阶导数为0，第n阶不为0$\begin{cases}\text{若n为奇，拐点}\\\text{若n为偶，极值点}\end{cases}$
+
+91. 拐点只能在二阶导数为0或不存在的点取到；极值点只能在驻点或导数不存在的点取到
+
+92. $f(x,y)$在$(x,y)$点最大方向导数为$|\vec{\nabla}f|$（模）
+
+93. 计算正态分布概率大小要化成标准正态分布再比较
+
+94. 平面图形或线图形绕轴旋转应找到三维坐标与平面某长度关系
+
+95. 看到$a_{ij}$先想到转化成矩阵
+
+96. 代数运算时应把x写在一起，把y写在一起减少失误
+
+97. 出现$f(x)+f^\prime(x)$时考虑构造$g(x)=f(x)\mathrm{e}^x$
+
+98. 解非齐次线性方程组时不要直接找线性无关解向量，应先转化为齐次线性方程组找到线性无关解再结合特解得到通解
+
+99. $S=\frac{1}{x}\sum\limits_{n=0}^{\infty}\frac{x^{2n+1}}{2n+1}\neq\int\frac{1}{x}\sum\limits_{n=0}^{\infty}x^{2n}\mathrm{d}x$提出的x在求导时会影响结果，应令$S=\frac{1}{x}f(x),f^{\prime}(x)=\sum\limits_{n=0}^{\infty}x^{2n}$
+
+100. $+\infty$和$-\infty$可能对应两条水平渐近线或一条，奇点处常有一条垂直渐近线，有两条水平渐近线就不可能有斜渐近线
+
+101. $f(x,y)$在$(x_0,y_0)$可微$\Leftrightarrow\Delta z=z_x^\prime\Delta x+z_y^\prime \Delta y+O(P)\Leftarrow f^\prime_x, f^\prime_y连续$
+
+102. 读题要仔细，不要把$\mathrm{e}^{x^2}$看成$\mathrm{e}^{-x^2}$
+
+103. 分清收敛区间（开区间）和收敛域
+
+104. 单调有界$\Rightarrow$收敛
+
 \end{document}
